@@ -1,22 +1,17 @@
-# Data Structures and Algorithms Practice
+# Data Structures and Algorithms Practice 🧠
 
 Welcome to my repository for Data Structures and Algorithms (DSA) practice! In this repository, I'll be documenting my journey as I work through various DSA problems from platforms like LeetCode and others. The goal is to improve my problem-solving skills and deepen my understanding of fundamental algorithms and data structures.
 
-## Folder Structure
+## Folder Structure 📂
 
 - **LeetCode:** This folder will contain solutions and attempts for problems from LeetCode.
 - **CODES:** Here, I'll store code for DSA problems from different platforms.
 
-## How to Navigate
+## Contributions 🤝
 
-- Each problem will have its own folder with a descriptive name indicating the problem or question.
-- Within each folder, you'll find the solution in the form of source code files, usually with appropriate comments explaining the approach and thought process.
+Feel free to suggest improvements or more optimized solutions by opening an issue or submitting a pull request. Constructive feedback is always welcome! 🌟
 
-## Contributions
-
-Feel free to suggest improvements or more optimized solutions by opening an issue or submitting a pull request. Constructive feedback is always welcome!
-
-## Progress
+## Progress 📈
 
 I'll try to update my progress regularly by adding new solutions and updating the README. If you have any questions about specific problems or would like to discuss different approaches, please don't hesitate to reach out.
 
