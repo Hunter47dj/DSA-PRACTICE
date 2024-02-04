@@ -13,12 +13,12 @@ public:
             int element = matrix[rowindex][colindex];
 
             if(element==target)
-                return 1;
+                return true;
             if(element<target)
                 rowindex++;
             else
                 colindex--;
         }
-        return 0;
+        return false;
     }
 };
