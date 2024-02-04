@@ -8,6 +8,12 @@ public:
         int start= 0;
         int end =row*col-1;
 
+        /*
+         mid element's index are calculated as :
+          row index = mid/col ,
+          column index = mid%col 
+         */
+
         int mid = start+ (end-start)/2;
         while(start <=end)
         {
