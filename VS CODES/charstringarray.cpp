@@ -3,7 +3,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-bool isPalindrome(string s) {
+bool Check(string s) {
        
         int start=0;
         int end= s.size()-1;
@@ -42,7 +42,7 @@ int main()
     // // cout<<s1;
 
     string s="0p";
-    // // cout<<isPalindrome(s);
+    // // cout<<Check(s);
     // string str = "Coding Ninjas Is A Coding Platform";
     // int i=0;
 	// while(str[i] != '\0' )
