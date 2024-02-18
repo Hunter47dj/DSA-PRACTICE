@@ -1,6 +1,6 @@
 class Solution {
 public:
-    void solve(vector<int> &nums, int index,vector<vector<int>> &ans)
+    void solve(vector<int> nums, int index,vector<vector<int>> &ans)
     {
         // base case
         if(index >= nums.size())
@@ -14,7 +14,7 @@ public:
         {
             swap(nums[index],nums[i]);
             solve(nums, index+1, ans);
-            swap(nums[index],nums[i]);
+            // swap(nums[index],nums[i]);
         }
     }
     vector<vector<int>> permute(vector<int>& nums) {
