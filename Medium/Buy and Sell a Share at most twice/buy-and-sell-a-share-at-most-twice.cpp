@@ -13,23 +13,22 @@ class Solution
         
         int maxProfit(vector<int>&price){
             //Write your code here..
+                int F_buy = INT_MIN;
+                int F_sell = 0;
             
-                int First_buy = INT_MIN;
-                int First_sell = 0;
-            
-                int Second_buy = INT_MIN;
-                int Second_sell = 0;
+                int S_buy = INT_MIN;
+                int S_sell = 0;
 
                
                 for (int i = 0; i < price.size(); i++)
                 {
-                    First_buy = max(First_buy,-price[i]);     // -10         // -10                 // -5           // -5       //-5        //-5
-                    First_sell = max(First_sell,price[i]+First_buy);   // -10+10 =0      //22 -10 =12        // 12           //70        //70        //75
-                    Second_buy = max(Second_buy,First_sell-price[i]);   // -10            //12-22 = -10       // 12 -5 = 7    //7         //7         //7
-                    Second_sell = max(Second_sell,price[i]+Second_buy);   // 0              // 22 + -10 = 12    // 12           //82        //82        //87
+                    F_buy = max(F_buy,-price[i]);     // -10         // -10                 // -5           // -5       //-5        //-5
+                    F_sell = max(F_sell,price[i]+F_buy);   // -10+10 =0      //22 -10 =12        // 12           //70        //70        //75
+                    S_buy = max(S_buy,F_sell-price[i]);   // -10            //12-22 = -10       // 12 -5 = 7    //7         //7         //7
+                    S_sell = max(S_sell,price[i]+S_buy);   // 0              // 22 + -10 = 12    // 12           //82        //82        //87
                 }
             
-                return Second_sell;   
+                return S_sell;  
         }
 };
 
