@@ -8,7 +8,7 @@ void selection(int arr[], int size)
     int swap_index=0;
     for (int i = 1; i < size; i++)
     {
-        if(arr[0]>arr[i])
+        if(arr[swap_index]>arr[i])
             swap_index=i;
     }
     swap(arr[0],arr[swap_index]);
