@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 class Solution{
 	public:
-	    void solve(string s, int index, string output, vector<string> &ans){
+		void solve(string s, int index, string output, vector<string> &ans){
 	        //base case
 	        if(index>= s.length()){
 	            if(output=="") return;
