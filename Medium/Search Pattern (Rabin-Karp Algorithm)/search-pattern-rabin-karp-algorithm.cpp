@@ -10,7 +10,7 @@ class Solution
         vector <int> search(string pattern, string text)
         {
             //code here.
-            vector<int> v;
+                        vector<int> v;
           int left = 0, right = 0;
           int ans = -1;
         
