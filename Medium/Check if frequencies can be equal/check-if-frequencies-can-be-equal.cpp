@@ -7,7 +7,7 @@ using namespace std;
 //User function template for C++
 class Solution{
 public:	
-	bool chk(vector<int> &v){
+		bool chk(vector<int> &v){
         bool flag = true;
 	        int pp = 0;
 	        for(int j = 0; j < 26; j++){
