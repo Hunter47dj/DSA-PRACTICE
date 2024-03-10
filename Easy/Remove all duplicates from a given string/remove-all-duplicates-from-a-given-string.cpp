@@ -10,7 +10,7 @@ class Solution{
 public:
 	string removeDuplicates(string str) {
 	    // code here
-	    string result;
+	    	    string result;
 	    
 	    for(int i=0; i< str.length(); i++)
 	    {
@@ -21,7 +21,6 @@ public:
 	    }
 
         return result;
-	    
 	}
 };
 
