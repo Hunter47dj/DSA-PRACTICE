@@ -1,5 +1,4 @@
 #User function Template for python3
-
 import numpy as np
 class Solution:
     def genFibNum(self, a, b, c, n, m):
