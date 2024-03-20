@@ -33,8 +33,6 @@ class Solution:
                 queue.append([node.right, length + 1, current_sum + node.right.data])
         
         return max_sum
-
-
 #{ 
  # Driver Code Starts
 #Initial Template for Python 3
