@@ -7,7 +7,6 @@ class Node:
         self.data = val
         self.left = None
 """
-
 class Solution:
     def minValue(self, root):
         if not root.left:
