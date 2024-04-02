@@ -25,7 +25,28 @@ void insertAtHead(node * &head, int data)  // don't want to create a copy so usi
     node *temp = new node(data);
 
     temp->next = head;
-    head= temp;
+    head= temp; 
+}
+
+
+// inserting at the middle of the LL
+
+void insertAtMiddle(node * &head, node * &tail, int data)
+{
+    node * temp = new node(data);
+    head->next=temp;
+    temp->next=tail;
+
+}
+
+// inserting the node at tail of LL
+
+void insertAtTail(node* &tail, int data)
+{
+    node *temp =new node(data);
+
+    tail->next =temp;   // to change the pointer to end 
+    tail =temp;      // to move tail to this node
 }
 
 
@@ -49,12 +70,20 @@ int main()
     // creating head for a node 
     node *head = node1;
     // creating the tail
-
+    node * tail = node1;
     //printing LL
-    print(head);
+    // print(head);
 
     // inserting the new node in the linked list 
-    insertAtHead(head,20);
+    // insertAtHead(head,20);
+    // print(head);
+    
+
+    insertAtTail(tail,30);
+    // insertAtTail(tail,90);
+    
+    // int position =3;  // inserting node at 3rd position of LL
+    insertAtMiddle(head,tail,50); // 20 10 _ 30 90
     print(head);
 
     

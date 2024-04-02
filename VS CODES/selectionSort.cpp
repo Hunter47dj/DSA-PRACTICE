@@ -1,33 +1,34 @@
-#include<iostream>
-using namespace std;
+#include <stdio.h>
+#include <string.h>
 
-
-
-int main()
-{ 
-    int arr[]= {7, 4, 8, 2, 9, 5};
-
-
-    for (int i = 0; i < 6-1; i++)
-    {
-        int minIndex=i;
-
-        for (int j = i+1; j < 6; j++)
-        {
-            if(arr[minIndex] > arr[j])
-                minIndex = j;
+int isPowerOfTwo(char binary[]) {
+    int countOnes = 0;
+    int length = strlen(binary);
+    
+    for (int i = 0; i < length; i++) {
+        if (binary[i] == '1') {
+            countOnes++;
+            if (countOnes > 1) {
+                return 0;
+            }
         }
-       
-       swap(arr[minIndex],arr[i]);
-        
+        else if (binary[i] != '0') {
+            return 0;
+        }
     }
     
-for (int i = 0; i < 6; i++)
-{
-    cout<<arr[i];
+    return countOnes == 1;
 }
 
+int main() {
+    char binary[101];
+    scanf("%s", binary);
+    
+    if (isPowerOfTwo(binary)) {
+        printf("True\n");
+    } else {
+        printf("False\n");
+    }
 
-
-return 0;
+    return 0;
 }
