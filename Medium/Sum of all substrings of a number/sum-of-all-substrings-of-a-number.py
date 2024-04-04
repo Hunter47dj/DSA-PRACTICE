@@ -3,8 +3,6 @@
 class Solution:
     #Function to find sum of all possible substrings of the given string.
     def sumSubstrings(self,s):
-        
-        # code here
         mod = 10 ** 9 + 7
         n = len(s)
         dp = [0] * n
@@ -14,6 +12,7 @@ class Solution:
             dp[i] = ((dp[i - 1] * 10) % mod + ((int(s[i]) * (i + 1)) % mod)) % mod
             ans = (ans + dp[i]) % mod
         return ans
+        # code here
 
 
 #{ 
