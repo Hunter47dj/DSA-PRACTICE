@@ -10,7 +10,7 @@ using namespace std;
 
 class Solution {
   public:
-    void printArr(int n, int arr[]) {
+   void printArr(int n, int arr[]) {
         // Your code for printing array here
         for(int j=0;j<n;j++)
         {
