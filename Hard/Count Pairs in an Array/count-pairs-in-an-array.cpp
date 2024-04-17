@@ -9,7 +9,7 @@ class Solution{
     public:
     int countPairs(int arr[] , int n ) 
     {
-        // Your code goes here   
+        // Your code goes here  
          int count = 0;
           
      vector<int>b,s;
