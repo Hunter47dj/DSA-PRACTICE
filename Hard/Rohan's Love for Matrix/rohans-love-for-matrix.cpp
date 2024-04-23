@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 class Solution {
   public:
-    int fn(int n, vector<int> &dp) {
+     int fn(int n, vector<int> &dp) {
     int mod = 1e9+7;
     if (n == 1) return 1;
     if (n == 2) return 1;
