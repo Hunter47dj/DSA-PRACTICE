@@ -12,7 +12,8 @@ class Solution {
   public:
     int minSteps(int d) {
         // code here
-         queue<int> q;
+         
+        queue<int> q;
         q.push(0);
         int l = 1;
         while(true){
