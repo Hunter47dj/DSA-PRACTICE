@@ -31,6 +31,7 @@ class Solution {
   public:
     int findNumberOfGoodComponent(int e, int v, vector<vector<int>> &edges) {
         // code here
+        
          vector<set<int>> vertices(v);
         for(int i = 0; i < v; i++) vertices[i].insert(i);
         for(auto edge : edges) {
