@@ -7,7 +7,7 @@ using namespace std;
 
 class Solution {
   public:
-    int helper(int n, int x, int y, vector<int> &dp)
+     int helper(int n, int x, int y, vector<int> &dp)
     {
         if(n <= 0)
             return 0;
