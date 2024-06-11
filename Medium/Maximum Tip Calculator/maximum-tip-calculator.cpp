@@ -25,8 +25,7 @@ class Array {
 
 class Solution {
   public:
-    
-          struct Pair {
+      struct Pair {
         int a;
         int b;
         int diff;
@@ -65,7 +64,6 @@ class Solution {
         }
         return sum;
     }
-    
 };
 
 
