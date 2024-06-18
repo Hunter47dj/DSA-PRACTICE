@@ -16,8 +16,7 @@ class Solution {
 
         // Returning the maximum volume
         return ans;
-        
-   }
+    }
 };
 
 //{ Driver Code Starts.
