@@ -11,8 +11,6 @@ class Solution
     long long getMaxArea(long long arr[], int n)
     {
         // Your code here
-        
-
          stack<long long>st;
         long long maxi=INT_MIN;
         
