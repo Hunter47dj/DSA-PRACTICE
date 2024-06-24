@@ -14,63 +14,65 @@ class Solution
     int celebrity(vector<vector<int> >& M, int n) 
     {
         // code here 
-        stack<int> st;
-
-        
-        for(int i=0; i<n; i++)
+       stack<int> st;
+       
+       for(int i=0; i<n; i++)
+       {
+           st.push(i);
+       }
+       
+       while(st.size() != 1)
+       {
+           int A = st.top();
+           st.pop();
+           
+           int B = st.top();
+           st.pop();
+           
+        //   if(M[A][B] ==1)
+        //   {
+        //       st.push(B);
+        //   }
+        //   else st.push(A);
+           
+           (M[A][B] == 1) ? st.push(B): st.push(A);
+       }
+       
+       // now we have a potential candidate to become celebrity 
+       
+    //   verification of rows and columns of potential candidate.
+    
+    int celeb = st.top();
+    
+    //checking row of celeb
+    
+    for(int i=0; i<n; i++)
+    {
+        if(M[celeb][i] != 0)
         {
-            st.push(i);
-
+            return -1;
         }
-        
-        while(st.size() > 1)
+    }
+    
+    //checking column of celeb
+    
+    for(int i=0; i<n; i++)
+    {
+        if(celeb == i)
         {
-            int A = st.top();
-            st.pop();
-            
-            int B = st.top();
-            st.pop();
-            
-            if(M[A][B] == 1)
-            {
-                st.push(B);
-            }
-            else {
-                st.push(A);
-            }
-
+            continue;  // skipping diagonal element
         }
-        
-        // now we have the potential candidate in the stack.
-        // verify it weather it is celebrity or not.
-        
-        int celeb = st.top();
-        
-        for(int i = 0; i<n; i++)
+        if(M[i][celeb] != 1)
         {
-            if(M[celeb][i] != 0)
-            {
-                return -1;
-            }
+            return -1;
         }
-        
-        
-        for(int i = 0; i<n; i++)
-        {
-            if(i == celeb)
-            {
-                continue;
-            }
-            
-            if(M[i][celeb] != 1 )
-            {
-                return -1;
-            }
-        }
-        
-        return celeb;
-        
-        
+    }
+    
+    
+    // now if we reach here then potential candidate is actually a celebrity
+    
+    return celeb;
+       
     }
 };
 
