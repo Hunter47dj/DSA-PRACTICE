@@ -35,7 +35,7 @@ int main() {
 
 bool isToeplitz(vector<vector<int>>& mat) {
     // code here
-    int row = mat.size();
+        int row = mat.size();
         int col = mat[0].size();
         
         for(int i=0; i < row - 1; i++) {
