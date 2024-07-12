@@ -7,52 +7,41 @@ class Solution {
   public:
     // Function to return Breadth First Traversal of given graph.
     
-    void bfs(vector<int> adj[], unordered_map<int,bool> &visited,vector<int> &ans, int node)
-{
-    queue<int> q;
-    q.push(node);
-
-    visited[node] = true; // this vertix is visted
-
-    while(!q.empty())
+    void bfs(int node, vector<int> adj[], unordered_map<int,bool> &visited, vector<int> &ans)
     {
-        // take out element from queue
-        int front = q.front();
-        q.pop();
-
-        // store it in the ans
-        ans.push_back(front);
-
-        // mark the front visited 
-        visited[front] = true;
-
-        // take the neighbouring vertices and put them in queue
-
-        for(auto i : adj[front])
+        queue<int> q;
+        q.push(node);
+        visited[node] = true;
+        
+        
+        while(!q.empty())
         {
-            if(!visited[i])
+            int front = q.front();
+            q.pop();
+            ans.push_back(front);
+            
+            for(auto i: adj[front])
             {
-                q.push(i);
-                // mark the node visited 
-                visited[i] = true;
+                if(!visited[i])
+                {
+                    visited[i] = true;
+                    q.push(i);
+                    
+                }
             }
         }
     }
-}
-
     
     vector<int> bfsOfGraph(int V, vector<int> adj[]) {
         // Code here
         unordered_map<int,bool> visited;
         vector<int> ans;
-    
-    
-            if(!visited[0])    // not taking for loop as q. has asked for nodes traversed from 0 only
-            {
-                bfs(adj,visited,ans,0);
-            }
         
-    
+        if(!visited[0])
+        {
+            bfs(0,adj,visited,ans);
+        }
+        
         return ans;
     }
 };
