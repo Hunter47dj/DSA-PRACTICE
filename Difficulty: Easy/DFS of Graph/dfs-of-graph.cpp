@@ -3,36 +3,28 @@
 using namespace std;
 
 // } Driver Code Ends
-
-
 class Solution {
   public:
     // Function to return a list containing the DFS traversal of the graph.
-    
-    void dfs(int node, vector<int> adj[], unordered_map<int,bool> &visited, vector<int> &ans)
+    void DFS(int node, vector<int> adj[], unordered_map<int,bool> &visited, vector<int> &ans)
     {
         visited[node] = true;
         ans.push_back(node);
         
-        for(auto i : adj[node])
+        for(auto i: adj[node])
         {
             if(!visited[i])
             {
-                dfs(i,adj,visited,ans);
+                DFS(i,adj,visited,ans);
             }
         }
     }
-    
-    
     vector<int> dfsOfGraph(int V, vector<int> adj[]) {
         // Code here
         unordered_map<int,bool> visited;
         vector<int> ans;
         
-        if(!visited[0])
-        {
-            dfs(0,adj,visited,ans);
-        }
+        DFS(0,adj,visited,ans);
         
         return ans;
     }
