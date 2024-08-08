@@ -6,7 +6,6 @@ using namespace std;
 class Solution {
   public:
     // Function to return Breadth First Traversal of given graph.
-    
     void bfs(int node, vector<int> adj[], unordered_map<int,bool> &visited, vector<int> &ans)
     {
         queue<int> q;
