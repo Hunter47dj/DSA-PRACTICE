@@ -5,7 +5,8 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
-   private:
+  public:
+     private:
     
     int noOfgasStations(vector<int> &arr, double long dist){
     int cnt = 0;
