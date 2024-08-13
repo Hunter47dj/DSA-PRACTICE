@@ -8,7 +8,8 @@ using namespace std;
 //User function Template for C++
 
 class Solution {
-   int timer=0;
+   private:
+    int timer=0;
     void dfs(int node, int parent, vector<int> adj[], vector<bool> &visited, vector<int> &low, vector<int> &disc, vector<int> &ans){
         visited[node]=1;
         low[node]=disc[node]=timer++;
