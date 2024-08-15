@@ -7,52 +7,36 @@ using namespace std;
 // User function Template for C++
 class Solution{
 public:
-    string matrixChainOrder(int p[], int n){
-       int dp[n][n];
-        
-        
-        char order[n][26];  // Fix the size of the array
-        
-        
-        for (int i = 1; i < n; i++) {
-            dp[i][i] = 0;
+    int dp[101][101];
+    string sp[101][101];
+    int helper(int lo, int hi, int arr[]){
+        if(lo==hi){
+            sp[lo][hi]="A";
+            sp[lo][hi][0]+=lo;
+            return 0;
         }
-        
-        
-        for (int len = 2; len < n; len++) {
-            for (int i = 1; i < n - len + 1; i++) {
-                int j = i + len - 1;
-                dp[i][j] = INT_MAX;
-                
-                for (int k = i; k < j; k++) {
-                    int cost = dp[i][k] + dp[k + 1][j] + p[i - 1] * p[k] * p[j];
-                    
-                    if (cost < dp[i][j]) {
-                        dp[i][j] = cost;
-                        order[i][j] = 'A' + k - 1; 
-                    }
-                }
+        if(dp[lo][hi]!=-1) return dp[lo][hi];
+        sp[lo][hi]="(";
+        dp[lo][hi]=INT_MAX;
+        for(int i=lo;i<hi;++i){
+            dp[lo][hi]=min(dp[lo][hi],helper(lo,i,arr)+helper(i+1,hi,arr)+arr[lo]*arr[i+1]*arr[hi+1]);
+        }
+        for(int i=lo;i<hi;++i){
+            if(dp[lo][hi]==helper(lo,i,arr)+helper(i+1,hi,arr)+arr[lo]*arr[i+1]*arr[hi+1]){
+                sp[lo][hi]+=sp[lo][i];
+                sp[lo][hi]+=sp[i+1][hi];
+                break;
             }
         }
-        
-        
-        string result = "";
-        printOrder(order, 1, n - 1, result);
-       
-        return result;
+        sp[lo][hi]+=")";
+        return dp[lo][hi];
     }
-
-private:
-    void printOrder(char order[][26], int i, int j, string &result) {
-        if (i == j) {
-            result += ('A' + i - 1);
-            return;
-        }
-        
-        result += '(';
-        printOrder(order, i, order[i][j] - 'A' + 1, result);
-        printOrder(order, order[i][j] - 'A' + 2, j, result);
-        result += ')';
+    string matrixChainOrder(int arr[], int n){
+        // code here
+        memset(dp,-1,sizeof(dp));
+        helper(0,n-2,arr);
+        // cout<<sp[0][n-2]<<" ";
+        return sp[0][n-2];
     }
 };
 
