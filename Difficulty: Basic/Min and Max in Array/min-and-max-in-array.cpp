@@ -9,15 +9,16 @@ class Solution {
   public:
     pair<long long, long long> getMinMax(vector<long long int> arr) {
         // code here
-        long long mini = INT_MAX;
-        long long maxi = INT_MIN;
-        for(int i =0; i<arr.size();i++)
+        
+        int min = INT_MAX; 
+        int max = INT_MIN;
+        for(int i=0; i< arr.size(); i++)
         {
-            mini  = min(arr[i],mini);
-            maxi = max(arr[i],maxi);
+            if(arr[i] < min) min = arr[i];
+            if(arr[i] > max) max = arr[i];
         }
         
-        return  {mini,maxi};
+        return {min,max};
     }
 };
 
